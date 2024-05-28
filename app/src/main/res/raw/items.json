@@ -1,0 +1,80 @@
+[
+  {
+    "name":"Cursor",
+    "price":15,
+    "description":"+0.1 points per second",
+    "clickBonus": "+0",
+    "autoClick": "+2",
+    "image": "sleeping"
+  },
+  {
+    "name":"Batwoman",
+    "price":10,
+    "description":"Half woman, half baseball bat. Has a heartwood of gold.",
+    "clickBonus": "+0",
+    "autoClick": "+1"
+  },
+  {
+    "name":"Batwoman",
+    "price":20,
+    "description":"Half woman, half baseball bat. Has a heartwood of gold.",
+    "clickBonus": "+2",
+    "autoClick": "+3"
+  },
+  {
+    "name":"Batwoman",
+    "price":700,
+    "description":"Half woman, half baseball bat. Has a heartwood of gold.",
+    "clickBonus": "+2",
+    "autoClick": "+3"
+  },
+  {
+    "name":"Batwoman",
+    "price":700,
+    "description":"Half woman, half baseball bat. Has a heartwood of gold.",
+    "clickBonus": "+2",
+    "autoClick": "+3"
+  },
+  {
+    "name":"Batwoman",
+    "price":700,
+    "description":"Half woman, half baseball bat. Has a heartwood of gold.",
+    "clickBonus": "+2",
+    "autoClick": "+3"
+  },
+  {
+    "name":"Batwoman",
+    "price":700,
+    "description":"Half woman, half baseball bat. Has a heartwood of gold.",
+    "clickBonus": "+2",
+    "autoClick": "+3"
+  },
+  {
+    "name":"Batwoman",
+    "price":700,
+    "description":"Half woman, half baseball bat. Has a heartwood of gold.",
+    "clickBonus": "+2",
+    "autoClick": "+3"
+  },
+  {
+    "name":"Batwoman",
+    "price":700,
+    "description":"Half woman, half baseball bat. Has a heartwood of gold.",
+    "clickBonus": "+2",
+    "autoClick": "+3"
+  },
+  {
+    "name":"Batwoman",
+    "price":700,
+    "description":"Half woman, half baseball bat. Has a heartwood of gold.",
+    "clickBonus": "+2",
+    "autoClick": "+3"
+  },
+  {
+    "name":"Batwoman",
+    "price":700,
+    "description":"Half woman, half baseball bat. Has a heartwood of gold.",
+    "clickBonus": "+2",
+    "autoClick": "+3"
+  }
+]
