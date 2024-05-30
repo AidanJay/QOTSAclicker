@@ -2,12 +2,14 @@ package com.example.cookieclicker
 
 import android.util.Log
 import android.view.LayoutInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import android.widget.PopupMenu
+import android.widget.Toast
 
 class ItemAdapter(var itemsList: List<Item>, var activity: MainActivity) : RecyclerView.Adapter<ItemAdapter.ViewHolder>(){
 
@@ -46,6 +48,7 @@ class ItemAdapter(var itemsList: List<Item>, var activity: MainActivity) : Recyc
         // contents of the view with that element
         val item = itemsList[position]
         val context = viewHolder.layout.context
+
         viewHolder.textViewPrice.text = item.price.toString()
         viewHolder.textViewName.text = item.name
         viewHolder.textViewDesc.text = item.description
@@ -83,10 +86,33 @@ class ItemAdapter(var itemsList: List<Item>, var activity: MainActivity) : Recyc
                 when(it.itemId) {
                     R.id.menu_itemlist_buyFive -> {
                         //buy 5
+                        var fiveCost = (item.price + (item.price * 1.2) + (item.price * 1.2 * 1.2) +
+                                (item.price * 1.2 * 1.2 * 1.2) + (item.price * 1.2 * 1.2 * 1.2 * 1.2)).toInt()
+                        if (MainActivity.points >= fiveCost) {
+                            MainActivity.points = MainActivity.points - fiveCost
+                            item.price = (item.price * 1.2 * 1.2 * 1.2 * 1.2 * 1.2).toInt()
+                        }
+                        else {
+                            Toast.makeText(this.activity, "Not enough points", Toast.LENGTH_SHORT).show()
+                        }
                         true
                     }
                     R.id.menu_itemlist_buyTen -> {
                         //buy 10
+                        var tenCost = (item.price + (item.price * 1.2) + (item.price * 1.2 * 1.2) +
+                                (item.price * 1.2 * 1.2 * 1.2) + (item.price * 1.2 * 1.2 * 1.2 * 1.2) +
+                                (item.price * 1.2 * 1.2 * 1.2 * 1.2 * 1.2) +
+                                (item.price * 1.2 * 1.2 * 1.2 * 1.2 * 1.2 * 1.2) +
+                                (item.price * 1.2 * 1.2 * 1.2 * 1.2 * 1.2 * 1.2 * 1.2) +
+                                (item.price * 1.2 * 1.2 * 1.2 * 1.2 * 1.2 * 1.2 * 1.2 * 1.2) +
+                                (item.price * 1.2 * 1.2 * 1.2 * 1.2 * 1.2 * 1.2 * 1.2 * 1.2 * 1.2)).toInt()
+                        if (MainActivity.points >= tenCost) {
+                            MainActivity.points = MainActivity.points - tenCost
+                            item.price = (item.price * 1.2 * 1.2 * 1.2 * 1.2 * 1.2 * 1.2 * 1.2 * 1.2 * 1.2 * 1.2).toInt()
+                        }
+                        else {
+                            Toast.makeText(this.activity, "Not enough points", Toast.LENGTH_SHORT).show()
+                        }
                         true
                     }
 
