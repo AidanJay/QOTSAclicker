@@ -74,6 +74,7 @@ class ItemAdapter(var itemsList: List<Item>, var activity: MainActivity) : Recyc
             }
             else {
                 Log.d(TAG, "onClick: ${MainActivity.points}")
+                Toast.makeText(this.activity, "Not enough points", Toast.LENGTH_SHORT).show()
             }
 
         }
@@ -82,6 +83,7 @@ class ItemAdapter(var itemsList: List<Item>, var activity: MainActivity) : Recyc
         viewHolder.layout.setOnLongClickListener {
             val popMenu = PopupMenu(context, viewHolder.textViewName)
             popMenu.inflate(R.menu.menu_item_list_context)
+            //update total costs
             popMenu.menu.getItem(0).title = "Buy 5 (${(item.price + (item.price * 1.3) + (item.price * 1.3 * 1.3) +
                     (item.price * 1.3 * 1.3 * 1.3) + (item.price * 1.3 * 1.3 * 1.3 * 1.3)).toInt()})"
             popMenu.menu.getItem(1).title = "Buy 10 (${(item.price + (item.price * 1.3) + (item.price * 1.3 * 1.3) +

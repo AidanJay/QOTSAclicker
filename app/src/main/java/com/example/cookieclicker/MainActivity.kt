@@ -3,6 +3,7 @@ package com.example.cookieclicker
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.cookieclicker.databinding.ActivityMainBinding
@@ -23,6 +24,7 @@ class MainActivity : AppCompatActivity() {
         var points = 0
         var clickBonus = 1
         var autoClick = 0
+        var check = 0
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -62,6 +64,10 @@ class MainActivity : AppCompatActivity() {
                 while (true) {
                     points = points + autoClick
                     totalPoints.text = "Points: $points"
+
+                    // tried to put achievement check in here but it kept breaking
+                    // the autoclicks so I moved it to the button onClickListener
+
                     Thread.sleep(1000)
                 }
             } catch (e: Exception) {
@@ -72,8 +78,32 @@ class MainActivity : AppCompatActivity() {
         clickerButton.setOnClickListener {
             points = points + clickBonus
             totalPoints.text = "Points: $points"
-        }
 
+            if (points >= 100 && check == 0) {
+                Toast.makeText(this, "100 points!", Toast.LENGTH_SHORT).show()
+                check++
+            }
+            if (points >= 1000 && check == 1) {
+                Toast.makeText(this, "1000 points!", Toast.LENGTH_SHORT).show()
+                check++
+            }
+            if (points >= 10000 && check == 2) {
+                Toast.makeText(this, "10000 points!", Toast.LENGTH_SHORT).show()
+                check++
+            }
+            if (points >= 100000 && check == 3) {
+                Toast.makeText(this, "100000 points!", Toast.LENGTH_SHORT).show()
+                check++
+            }
+            if (points >= 1000000 && check == 4) {
+                Toast.makeText(this, "1000000 points!", Toast.LENGTH_SHORT).show()
+                check++
+            }
+            if (points >= 10000000 && check == 5) {
+                Toast.makeText(this, "10000000 points!", Toast.LENGTH_SHORT).show()
+                check++
+            }
+        }
     }
 
     fun updateDisplay() {
