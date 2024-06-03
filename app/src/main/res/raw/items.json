@@ -1,80 +1,79 @@
 [
   {
-    "name":"Cursor",
-    "price":15,
-    "description":"+0.1 points per second",
-    "clickBonus": "+0",
-    "autoClick": "+2",
-    "image": "sleeping"
+    "name":"Little Sister",
+    "price":10,
+    "description":"I wanna be the only one (+1 PPC)",
+    "clickBonus": "+1",
+    "autoClick": "+0"
   },
   {
-    "name":"Batwoman",
-    "price":10,
-    "description":"Half woman, half baseball bat. Has a heartwood of gold.",
+    "name":"Mexicola",
+    "price":30,
+    "description":"One dog's dead, one's on the phone (+1 PPS & +1 PPC)",
+    "clickBonus": "+1",
+    "autoClick": "+1"
+  },
+  {
+    "name":"Smooth Sailing",
+    "price":20,
+    "description":"I got nothing to lose and only one way up (+1 PPS)",
     "clickBonus": "+0",
     "autoClick": "+1"
   },
   {
-    "name":"Batwoman",
-    "price":20,
-    "description":"Half woman, half baseball bat. Has a heartwood of gold.",
-    "clickBonus": "+2",
+    "name":"You Think I Ain't Worth A Dollar, But I Feel Like a Millionaire",
+    "price":100,
+    "description":"Space trucking, four on the floor (+4 PPS)",
+    "clickBonus": "+0",
+    "autoClick": "+4"
+  },
+  {
+    "name":"Misfit Love",
+    "price":100000,
+    "description":"If you bet on me, you've won (x2 PPS)",
+    "clickBonus": "+0",
+    "autoClick": "*2"
+  },
+  {
+    "name":"Feet Don't Fail Me",
+    "price":1973,
+    "description":"I was born in the desert, May 17 in '73 (+7 PPS & +1 PPC)",
+    "clickBonus": "+1",
+    "autoClick": "+7"
+  },
+  {
+    "name":"3’s & 7’s",
+    "price":3737,
+    "description":"What you do, say it with a smile, boy (+3 PPS & +7 PPC)",
+    "clickBonus": "+7",
     "autoClick": "+3"
   },
   {
-    "name":"Batwoman",
-    "price":700,
-    "description":"Half woman, half baseball bat. Has a heartwood of gold.",
-    "clickBonus": "+2",
-    "autoClick": "+3"
+    "name":"Emotion Sickness",
+    "price":999999,
+    "description":"Single servings of pain (x0 PPS & x0 PPC)",
+    "clickBonus": "*0",
+    "autoClick": "*0"
   },
   {
-    "name":"Batwoman",
-    "price":700,
-    "description":"Half woman, half baseball bat. Has a heartwood of gold.",
-    "clickBonus": "+2",
-    "autoClick": "+3"
+    "name":"The Way You Used To Do",
+    "price":17000,
+    "description":"When I first met her she was 17 (+17 PPC)",
+    "clickBonus": "+17",
+    "autoClick": "+0"
   },
   {
-    "name":"Batwoman",
-    "price":700,
-    "description":"Half woman, half baseball bat. Has a heartwood of gold.",
-    "clickBonus": "+2",
-    "autoClick": "+3"
+    "name":"Regular John",
+    "price":16278,
+    "description":"One, six, two, seven, eight (+24 PPS)",
+    "clickBonus": "+0",
+    "autoClick": "+24"
   },
   {
-    "name":"Batwoman",
-    "price":700,
-    "description":"Half woman, half baseball bat. Has a heartwood of gold.",
-    "clickBonus": "+2",
-    "autoClick": "+3"
-  },
-  {
-    "name":"Batwoman",
-    "price":700,
-    "description":"Half woman, half baseball bat. Has a heartwood of gold.",
-    "clickBonus": "+2",
-    "autoClick": "+3"
-  },
-  {
-    "name":"Batwoman",
-    "price":700,
-    "description":"Half woman, half baseball bat. Has a heartwood of gold.",
-    "clickBonus": "+2",
-    "autoClick": "+3"
-  },
-  {
-    "name":"Batwoman",
-    "price":700,
-    "description":"Half woman, half baseball bat. Has a heartwood of gold.",
-    "clickBonus": "+2",
-    "autoClick": "+3"
-  },
-  {
-    "name":"Batwoman",
-    "price":700,
-    "description":"Half woman, half baseball bat. Has a heartwood of gold.",
-    "clickBonus": "+2",
-    "autoClick": "+3"
+    "name":"Make It Wit Chu",
+    "price":100000,
+    "description":"Or how one becomes two (x2 PPC)",
+    "clickBonus": "*2",
+    "autoClick": "+0"
   }
 ]

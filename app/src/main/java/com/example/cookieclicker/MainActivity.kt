@@ -17,11 +17,11 @@ class MainActivity : AppCompatActivity() {
     lateinit var clickerButton: Button
     lateinit var totalPoints: TextView
     lateinit var pointsPerSecond: TextView
-    lateinit var clicksPerSecond: TextView
+    lateinit var pointsPerClick: TextView
 
     companion object {
         var points = 0
-        var clickBonus = 0
+        var clickBonus = 1
         var autoClick = 0
     }
 
@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
         clickerButton = findViewById(R.id.button_main_buttonClicker)
         totalPoints = findViewById(R.id.textView_main_totalPoints)
         pointsPerSecond = findViewById(R.id.textView_main_pointsPerSecond)
-        clicksPerSecond = findViewById(R.id.textView_main_clicksPerSecond)
+        pointsPerClick = findViewById(R.id.textView_main_pointsPerClick)
 
         val inputStream = resources.openRawResource(R.raw.items)
         val jsonString = inputStream.bufferedReader().use {
@@ -70,7 +70,7 @@ class MainActivity : AppCompatActivity() {
         counterThread.start()
 
         clickerButton.setOnClickListener {
-            points = points + clickBonus + 1
+            points = points + clickBonus
             totalPoints.text = "Points: $points"
         }
 
@@ -78,6 +78,8 @@ class MainActivity : AppCompatActivity() {
 
     fun updateDisplay() {
         totalPoints.text = "Points: $points"
+        pointsPerSecond.text = "PPS: $autoClick"
+        pointsPerClick.text = "PPC: $clickBonus"
     }
 
     fun addBonuses(click : String, auto : String) {

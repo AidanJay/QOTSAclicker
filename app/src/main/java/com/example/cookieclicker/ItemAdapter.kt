@@ -63,14 +63,14 @@ class ItemAdapter(var itemsList: List<Item>, var activity: MainActivity) : Recyc
                 MainActivity.points = MainActivity.points - item.price
 
                 //increasing price exponentially
-                item.price = (item.price * 1.2).toInt()
+                item.price = (item.price * 1.3).toInt()
                 viewHolder.textViewPrice.text = item.price.toString()
-
-                //updating textviews
-                activity.updateDisplay()
 
                 //adding purchased bonus
                 activity.addBonuses(item.clickBonus, item.autoClick)
+
+                //updating textviews
+                activity.updateDisplay()
             }
             else {
                 Log.d(TAG, "onClick: ${MainActivity.points}")
@@ -82,15 +82,29 @@ class ItemAdapter(var itemsList: List<Item>, var activity: MainActivity) : Recyc
         viewHolder.layout.setOnLongClickListener {
             val popMenu = PopupMenu(context, viewHolder.textViewName)
             popMenu.inflate(R.menu.menu_item_list_context)
+            popMenu.menu.getItem(0).title = "Buy 5 (${(item.price + (item.price * 1.3) + (item.price * 1.3 * 1.3) +
+                    (item.price * 1.3 * 1.3 * 1.3) + (item.price * 1.3 * 1.3 * 1.3 * 1.3)).toInt()})"
+            popMenu.menu.getItem(1).title = "Buy 10 (${(item.price + (item.price * 1.3) + (item.price * 1.3 * 1.3) +
+                    (item.price * 1.3 * 1.3 * 1.3) + (item.price * 1.3 * 1.3 * 1.3 * 1.3) +
+                    (item.price * 1.3 * 1.3 * 1.3 * 1.3 * 1.3) +
+                    (item.price * 1.3 * 1.3 * 1.3 * 1.3 * 1.3 * 1.3) +
+                    (item.price * 1.3 * 1.3 * 1.3 * 1.3 * 1.3 * 1.3 * 1.3) +
+                    (item.price * 1.3 * 1.3 * 1.3 * 1.3 * 1.3 * 1.3 * 1.3 * 1.3) +
+                    (item.price * 1.3 * 1.3 * 1.3 * 1.3 * 1.3 * 1.3 * 1.3 * 1.3 * 1.3)).toInt()})"
             popMenu.setOnMenuItemClickListener {
                 when(it.itemId) {
                     R.id.menu_itemlist_buyFive -> {
                         //buy 5
-                        var fiveCost = (item.price + (item.price * 1.2) + (item.price * 1.2 * 1.2) +
-                                (item.price * 1.2 * 1.2 * 1.2) + (item.price * 1.2 * 1.2 * 1.2 * 1.2)).toInt()
+                        var fiveCost = (item.price + (item.price * 1.3) + (item.price * 1.3 * 1.3) +
+                                (item.price * 1.3 * 1.3 * 1.3) + (item.price * 1.3 * 1.3 * 1.3 * 1.3)).toInt()
                         if (MainActivity.points >= fiveCost) {
                             MainActivity.points = MainActivity.points - fiveCost
-                            item.price = (item.price * 1.2 * 1.2 * 1.2 * 1.2 * 1.2).toInt()
+                            item.price = (item.price * 1.3 * 1.3 * 1.3 * 1.3 * 1.3).toInt()
+                            for (i in 1..5) {
+                                activity.addBonuses(item.clickBonus, item.autoClick)
+                            }
+                            viewHolder.textViewPrice.text = item.price.toString()
+                            activity.updateDisplay()
                         }
                         else {
                             Toast.makeText(this.activity, "Not enough points", Toast.LENGTH_SHORT).show()
@@ -99,16 +113,21 @@ class ItemAdapter(var itemsList: List<Item>, var activity: MainActivity) : Recyc
                     }
                     R.id.menu_itemlist_buyTen -> {
                         //buy 10
-                        var tenCost = (item.price + (item.price * 1.2) + (item.price * 1.2 * 1.2) +
-                                (item.price * 1.2 * 1.2 * 1.2) + (item.price * 1.2 * 1.2 * 1.2 * 1.2) +
-                                (item.price * 1.2 * 1.2 * 1.2 * 1.2 * 1.2) +
-                                (item.price * 1.2 * 1.2 * 1.2 * 1.2 * 1.2 * 1.2) +
-                                (item.price * 1.2 * 1.2 * 1.2 * 1.2 * 1.2 * 1.2 * 1.2) +
-                                (item.price * 1.2 * 1.2 * 1.2 * 1.2 * 1.2 * 1.2 * 1.2 * 1.2) +
-                                (item.price * 1.2 * 1.2 * 1.2 * 1.2 * 1.2 * 1.2 * 1.2 * 1.2 * 1.2)).toInt()
+                        var tenCost = (item.price + (item.price * 1.3) + (item.price * 1.3 * 1.3) +
+                                (item.price * 1.3 * 1.3 * 1.3) + (item.price * 1.3 * 1.3 * 1.3 * 1.3) +
+                                (item.price * 1.3 * 1.3 * 1.3 * 1.3 * 1.3) +
+                                (item.price * 1.3 * 1.3 * 1.3 * 1.3 * 1.3 * 1.3) +
+                                (item.price * 1.3 * 1.3 * 1.3 * 1.3 * 1.3 * 1.3 * 1.3) +
+                                (item.price * 1.3 * 1.3 * 1.3 * 1.3 * 1.3 * 1.3 * 1.3 * 1.3) +
+                                (item.price * 1.3 * 1.3 * 1.3 * 1.3 * 1.3 * 1.3 * 1.3 * 1.3 * 1.3)).toInt()
                         if (MainActivity.points >= tenCost) {
                             MainActivity.points = MainActivity.points - tenCost
-                            item.price = (item.price * 1.2 * 1.2 * 1.2 * 1.2 * 1.2 * 1.2 * 1.2 * 1.2 * 1.2 * 1.2).toInt()
+                            item.price = (item.price * 1.3 * 1.3 * 1.3 * 1.3 * 1.3 * 1.3 * 1.3 * 1.3 * 1.3 * 1.3).toInt()
+                            for (i in 1..10) {
+                                activity.addBonuses(item.clickBonus, item.autoClick)
+                            }
+                            viewHolder.textViewPrice.text = item.price.toString()
+                            activity.updateDisplay()
                         }
                         else {
                             Toast.makeText(this.activity, "Not enough points", Toast.LENGTH_SHORT).show()

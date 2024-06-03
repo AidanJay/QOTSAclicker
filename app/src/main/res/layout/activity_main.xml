@@ -4,19 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/dgray"
     tools:context=".MainActivity">
 
     <Button
         android:id="@+id/button_main_buttonClicker"
         android:layout_width="150dp"
         android:layout_height="150dp"
+        android:background="@drawable/qotsalogo"
         android:text="Button"
         app:layout_constraintBottom_toTopOf="@+id/guideline4"
         app:layout_constraintEnd_toStartOf="@+id/guideline3"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
         app:layout_constraintTop_toTopOf="@+id/guideline"
-        app:layout_constraintVertical_bias="0.5" />
+        app:layout_constraintVertical_bias="0.5"
+        tools:visibility="invisible" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
@@ -44,13 +47,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.35" />
+        app:layout_constraintGuide_percent="0.3" />
 
     <TextView
         android:id="@+id/textView_main_totalPoints"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="Points: 0"
+        android:textColor="#FFFFFF"
         app:layout_constraintEnd_toStartOf="@+id/guideline3"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
         app:layout_constraintTop_toTopOf="@+id/guideline" />
@@ -60,15 +64,17 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="PPS: 0"
+        android:textColor="#FFFFFF"
         app:layout_constraintEnd_toStartOf="@+id/guideline3"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
         app:layout_constraintTop_toBottomOf="@+id/textView_main_totalPoints" />
 
     <TextView
-        android:id="@+id/textView_main_clicksPerSecond"
+        android:id="@+id/textView_main_pointsPerClick"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="CPS: 0"
+        android:text="PPC: 1"
+        android:textColor="#FFFFFF"
         app:layout_constraintEnd_toStartOf="@+id/guideline3"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
         app:layout_constraintTop_toBottomOf="@+id/textView_main_pointsPerSecond" />
@@ -81,5 +87,17 @@
         app:layout_constraintEnd_toStartOf="@+id/guideline3"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
         app:layout_constraintTop_toTopOf="@+id/guideline4" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline4"
+        app:layout_constraintEnd_toStartOf="@+id/guideline3"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toTopOf="@+id/guideline"
+        app:layout_constraintVertical_bias="0.5"
+        app:srcCompat="@drawable/qotsalogo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
